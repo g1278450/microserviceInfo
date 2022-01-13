@@ -1,0 +1,17 @@
+server:
+  port: 80
+ 
+spring:
+  application:
+    name: channel-service
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+    register-with-eureka: true # 由於它不是一個服務提供者,不註冊到eureka
+  instance:
+    instance-id: channel-service-80 # 當前服務例項名稱
+    prefer-ip-address: true # 是否使用IP地址作為當前服務的標識,有些是會使用主機號,你可以嘗試註釋看看效果
+    # 由於拉取服務和是否把自己註冊到eureka的都是預設true的,所以不需要配置      
+  
